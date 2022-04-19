@@ -1,14 +1,16 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
-	inputReader := bufio.NewReader(os.Stdin)
-	src, _ := inputReader.ReadString('\r')
-	count := wordcount(src)
-	fmt.Println(count)
+	input := strings.Trim(os.Args[1], " ")
+	var list []string
+	if len(input) != 0 {
+		list = strings.Split(input, " ")
+	}
+	fmt.Println(len(list))
 }
